@@ -1,0 +1,31 @@
+
+syntax = "proto3";
+
+package validpack;
+
+service Greeter {
+  // unary call
+  rpc SayHello(HelloRequest) returns (HelloReply);
+  // server streaming call
+}
+service Validate{
+  rpc validateRequest(validatePayload) returns (validateResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message validatePayload {
+  string message = 1;
+
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+message validateResponse {
+    string message = 1;   
+  
+  }
